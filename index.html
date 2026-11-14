@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>GRToBI — Greek Tones and Break Indices</title><style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#243444;background:#f7f9fb}*{box-sizing:border-box}body{margin:0;line-height:1.65}header{background:#193b57;color:white;padding:2.4rem max(1.2rem,calc((100vw - 1050px)/2))}header h1{margin:0;font-size:2.6rem}header p{margin:.35rem 0}header a{color:#e4f2ff}nav{background:#e4eef5;padding:.75rem max(1.2rem,calc((100vw - 1050px)/2))}nav a{margin-right:1.4rem;color:#12496e}main{max-width:1050px;margin:2rem auto;padding:0 1.2rem}.manual,.gallery{background:white;padding:1.6rem 2rem;border:1px solid #dfe7ed;border-radius:12px;margin-bottom:2rem}.manual{overflow-wrap:anywhere}.manual *{max-width:100%}.manual img{height:auto}.manual table{width:100%;max-width:100%;display:block;overflow-x:auto}.manual p{margin:1rem 0}.manual h1,.manual h2,.manual h3{color:#173f60;line-height:1.3}.manual a,.gallery a{color:#075a8b}.manual [id],.manual [name]{scroll-margin-top:1rem}.figure{border-top:1px solid #dce4eb;padding:1.8rem 0}.figure img{display:block;width:100%;height:auto;max-width:920px;margin:1rem auto;border:1px solid #e1e5e9}.figure figcaption{font-size:.98rem;max-width:900px}.figure audio{display:block;width:min(100%,450px);margin:1rem 0}.figure h3{margin:.2rem 0;color:#173f60}footer{max-width:1050px;margin:2rem auto;padding:1rem 1.2rem;color:#506171;font-size:.9rem}@media(max-width:640px){header h1{font-size:2rem}.manual,.gallery{padding:1.1rem}}
+
+.manual table{display:table;width:100%;border-collapse:separate;border-spacing:0;border:1px solid #cbdbe7;border-radius:10px;overflow:hidden;margin:1.2rem 0 2rem;font-size:.97rem}
+.manual table td,.manual table th{padding:.85rem 1rem;vertical-align:top;border-bottom:1px solid #e0e9f0;text-align:left}
+.manual table tr:nth-child(even){background:#f1f6fa}
+.manual table tr:last-child td{border-bottom:0}
+.manual table td:first-child{font-weight:700;white-space:nowrap;color:#163f61;width:24%}
+.manual a[href^="#"]{text-decoration:underline;text-underline-offset:2px}
+html{scroll-behavior:smooth}.manual h2[id]{border-bottom:1px solid #e0e9f0;padding-bottom:.3rem;margin-top:2rem}
+@media(max-width:600px){.manual table td{padding:.55rem;font-size:.87rem}.manual table td:first-child{white-space:normal}}
+</style></head><body><header><h1>GRToBI</h1><p>Greek Tones and Break Indices</p><p>Developed by <a href="https://www.ru.nl/en/people/arvaniti-a">Amalia Arvaniti</a> and <a href="https://marybalt9.wixsite.com/marybaltaz">Mary Baltazani</a></p></header><nav><a href="#manual">Manual</a><a href="#figures">Figures and sound examples</a></nav><main><section class="manual" id="manual">
+<div class="post">
+<h2 class="title" id="a-brief-grtobi-manual">A brief GRToBI manual</h2>
+<p class="meta">last updated in june 2011 <br/>
+</p>
+<div class="entry">
+<h2 class="title" id="contents">Contents</h2>
+<ul>
+<li><a href="#what-is-grtobi">What is
+GRToBI?</a> </li>
+<li><a href="#uses-of-grtobi">Uses of GRToBI</a> </li>
+<li><a href="#the-grtobi-annotation-system">The GRToBI annotation system</a> </li>
+<li><a href="#figures">Annotation examples</a> </li>
+<li><a href="#acknowledgments">Acknowledgements</a> </li>
+<li><a href="#bibliography">Bibliography</a></li>
+<li><a href="#bibliography">Appendices</a> </li>
+
+</ul>
+<p class="MsoNormal">Please
+note:<br/>
+(a)  the most complete description of GRToBI currently available
+is Arvaniti
+&amp; Baltazani (2005)<br/>
+(b) this page provides downloadable files, and includes some updates to
+the
+system  but
+it is by necessity brief and should not be considered a
+substitute of the published papers on GRToBI.<br/>
+</p>
+<h2 class="title" id="what-is-grtobi">What is GRToBI?</h2>
+<p class="MsoNormal">GRToBI
+is a tool for the annotation of Greek spoken corpora; it
+provides a system for annotating intonational, prosodic and (limited)
+phonetic
+information, though
+users can add tiers that encode other types of
+information as well. <br/>
+<br/>
+<span>GRToBI is not a transcription system
+for Greek
+intonation</span>, i.e.
+it is not equivalent to a list of IPA symbols for Greek
+intonation. This is so for two related reasons. <span>First</span>,
+GRToBI assumes a particular view of prosody and of the
+relationship between phonetics and phonology. In particular, GRToBI is
+based on
+the autosegmental-metrical
+framework of intonational phonology which
+assumes a principled distinction between phonetics and phonology. The
+analysis
+on which GRToBI is
+based is phonological; that is, GRToBI is not meant to be a
+surface phonetic faithfull representation of F0 contours.
+Thus, the
+annotation labels may not always be
+phonetically transparent, and are not intended to capture all
+possible variations in phonetic realization. On the other hand, the
+differences
+indicated by the autosegmental representations
+are meant to be meaningful, that is to reflect
+pragmatic differences related to the melody. <span>Second</span>,  GRToBI has
+been
+designed to represent the
+prosodic system of Greek as spoken in Athens.
+Thus the
+tonal inventory may include phonological entities (e.g. pitch accents)
+not
+attested in other varieties of
+Greek and may not include entities that are attested in those
+varieties. Further, the phonetic realization of the same tonal unit may
+differ
+between the Athenian variety
+assumed here and other varieties. Finally, it is quite
+possible that certain configurations (e.g. the combinations of 
+phrasal
+tones described below) do not occur
+in all varieties of Greek or if they do occur they have
+different pragmatics; differences in pragmatics may have to do with the
+implicatures that a melody conveyes or with the ways it can encode
+focus. Recent research on the variation of melodies used with polar and
+wh-questions in Greek from Corfu, Crete, Cyprus and among L3 and
+heritage communities (Thrace Roma and heritage speakers in the US and
+Germany respectively) supports these distinctions (Tsiplakou et al.
+2011; Gryllia et al. 2011). <br/>
+</p>
+<p>In
+terms of design, GRToBI is
+similar to the original <a href="https://www.ling.ohio-state.edu/research/phonetics/E_ToBI/">ToBI
+system for American English or MAE ToBI</a> (MAE stands for Mainstream
+American
+English; see Silverman et al., 1992; Beckman et al. 2005). GRToBI
+has
+been adapted from this original design so that prosodic phenomena
+requiring
+special attention in Greek, such as <a href="#the-break-index-tier-diacritics">sandhi</a>, can
+be more easily annotated. </p>
+<p> </p>
+<p>The
+prosodic and intonational
+analyses assumed in GRToBI have been based <br/>
+(a) on  existing research on various aspects of Greek
+prosody (see <a href="#bibliography">Bibliography</a>); since new
+findings are continuously
+added to this body of research, it is natural that
+particular aspects of the
+phonological analysis assumed in GRToBI may be revised in the light of
+new
+evidence. For example, Baltazani,
+Gryllia &amp; Arvaniti (2011) show that there are two standard
+melodies used with wh-questions in Greek, each with its own pragmatics.
+<br/>
+(b) on the transcription of a corpus of spoken Standard Greek
+that
+includes data from several speakers using a variety of styles (read
+text, news
+broadcasting, interviews,
+spontaneous speech). </p>
+ 
+<h2 class="title" id="uses-of-grtobi">Uses of GRToBI</h2>
+<br/>
+<p>GRToBI
+is being used to develop a publicly available corpus of
+annotated utterances. Prosodically annotated corpora are an important
+language
+resource for several
+reasons. Corpora based research can contribute to the
+better understanding of prosody (see e.g. <a href="#reference-13">Arvaniti
+&amp; Pelekanou 2002</a>), a neglected aspect of spoken
+language, the importance of which in speech production,
+speech perception and language acquisition has now begun to emerge. A
+better
+understanding of
+prosody will also lead to more natural speech synthesis and,
+possibly, more efficient speech recognition systems.<br/>
+</p>
+<p><br/>
+<span>Further,
+GRToBI is based on an
+analysis of Greek prosodic structure. This analysis, developed on the
+basis of
+existing research and the annotation of the GRToBI corpus
+itself, is the first
+systematic description of Greek prosody and, as such, useful for
+theoretical
+reasons. </span></p>
+<p><br/>
+Thus,
+the
+GRToBI  database and prosodic analysis system can be used for
+several
+purposes: </p>
+<ul type="disc">
+<li class="MsoNormal">conducting 
+research on the phenomena encoded in the GRToBI tiers (or other
+phenomena that specific sites may wish to annotate in additional tiers
+by searching the corpus; </li>
+<li class="MsoNormal">obtaining
+quantitative results by using the corpus as an annotated database; </li>
+<li class="MsoNormal">teaching Greek
+prosody both to students of linguistics and to second language
+learners, by adopting the prosodic analysis used in GRToBI and using
+GRToBI annotated utterances as examples; </li>
+<li class="MsoNormal"><span>using the
+prosodic analysis and quantitative data derived from GRToBI for
+modeling prosody for speech synthesis.</span><span></span></li>
+</ul>
+<br/>
+<h2 class="title" id="the-grtobi-annotation-system">The GRToBI annotation system</h2>
+<br/>
+<p class="MsoNormal">A
+GRToBI annotated file consists of an audio recording of
+the utterance (in wav format) and an annotation file (currently in the
+PRAAT
+textgrid format). </p>
+<p class="MsoNormal">When
+the wav and textgrid files are opened together the
+following appear: the waveform of the utterance, the spectrogram and
+pitch
+contour of the utterance</p>
+<p class="MsoNormal">(in
+Hz), as well as the five GRToBI annotation tiers (see <a href="#figure-1">Figure 1</a>
+for an
+example): </p>
+<ul type="disc">
+<li class="MsoNormal">The <a href="#the-tone-tier">Tone
+Tier</a> for the intonational analysis </li>
+<li class="MsoNormal">The <a href="#the-prosodic-words-tier">Prosodic
+Words
+Tier</a> for phonetic transcription </li>
+<li class="MsoNormal">The <a href="#the-words-tier">Words
+Tier</a> for the text in romanization </li>
+<li class="MsoNormal">The <a href="#the-break-index-tier-and-its-diacritics">Break
+Index Tier</a> for indices of cohesion </li>
+<li class="MsoNormal">The <a href="#the-miscellaneous-tiers">Miscellaneous
+Tier</a> for other
+information</li>
+</ul>
+<br/>
+<h2 class="title" id="the-tone-tier">The tone tier</h2>
+<br/>
+<p class="MsoNormal">For
+the intonational analysis of Greek utterances we recognize
+three types of tonal events, <a href="#the-pitch-accents">pitch
+accents</a>,
+<a href="#the-phrase-accents">phrase
+accents</a>,
+and <a href="#the-boundary-tones">boundary
+tones</a>,
+and two levels of
+phrasing, the intermediate phrase (ip) and the intonational
+phrase (IP). <br/>
+</p>
+<h2 class="title" id="the-pitch-accents">The pitch accents</h2>
+<br/>
+<p class="MsoNormal"><span>A
+pitch accent is a melody that is phonologically associated
+with a metrically strong syllable. Phonetically, a pitch accent
+co-occurs (more
+or less) with the stressed syllable
+it is phonologically associated with.  Pitch
+accents are "prominence cueing" (a term coined by </span>Francis Nolan<span>) in that
+they
+indicate that the syllable with which
+they co-occur is meant to be construed as being metrically
+prominent (i.e. stressed). In Greek there is typically one prominent
+syllable
+in each content word; its
+position is lexically specified. Most function words do not
+have prominent syllables (though they may carry orthographic accent),
+but some
+do, such as the word <span>kaTA</span>
+when it means "against" (where capitals denote stressed syllables). In
+some cases, Greek
+words may carry two pitch accents: this happens when a word is stressed
+on the
+antepenult and is followed by
+an enclitic (e.g. <span>to aftoKIniTO mu</span>
+"the car
+my"), or when a word is stressed on the penult and is followed by two
+enclitics (e.g. <span>FEre MU to</span>
+"bring me it"). In such cases,
+both stressed syllables can be accented; if there is only
+one accent, this falls on the rightmost stressed syllable of the entire
+group.
+Thus, in Greek we can distinguish
+ between (i) unstressed syllables, such as <span>re </span>in <span>FEre MU to, </span>(ii) stressed but
+unaccented syllables, such as <span>FE </span>in
+</span><span><span>FEre MU to </span>with one accent<span>, </span></span><span>and (iii) stressed and accented
+syllables,
+such as <span>FE </span>and MU in [FEre
+MU to].</span><br/>
+<br/>
+Our research suggests that in Greek we can distinguish five pitch
+accents: H*,
+L*, L*+H, L+H*, H* and H*+L. The typical distribution and phonetic
+realization
+of these
+accents is described below and shown in Figures <a href="#figure-1">1</a>,
+<a href="#figure-2">2</a>,
+<a href="#figure-3">3</a>,
+and <a href="#figure-4">4</a>.
+Each utterance has at least
+one pitch accent, but typically more, since in Greek most stressed
+syllables
+are also accented; thus, while an English phrase such
+as Mary loves John is most likely uttered without an accent on
+loves,
+in a similar Greek phrase, such as
+[i ma'ria mi'lai sto 'mano] "Maria is talking to
+Manos", all three content words are accented. The last accent of an
+utterance is called the nucleus. By default, the
+nucleus falls on the last content word of an utterance (if
+it is a declarative?for other types of utterance, see below), but it
+may
+occur on an earlier word under narrow
+or contrastive focus.</p>
+<ul type="disc">
+<li class="MsoNormal">H*
+<span>is mostly used as a nuclear
+accent in
+declarative utterances and it contrasts with L+H*: a L+H* nuclear
+accent signals narrow or contrastive focus</span> (<a href="#reference-12">Arvaniti
+et al. 2006b</a>), <span>whereas
+H*
+signals broad focus (Baltazani 2003). The H* accent lacks the initial
+dip
+associated with the L tone of the L+H*</span> (<a href="#reference-12">Arvaniti
+et
+al. 2006b</a>) <span>and its peak is
+probably aligned earlier
+in
+the accented vowel, though quantitative data on this point are not yet
+available.</span></li>
+</ul>
+<ul type="disc">
+<li class="MsoNormal">L*
+<span>is realized as a low plateau.
+This accent
+appears in nuclear position before a "continuation rise" (Baltazani
+&amp; Jun 1999), in yes-no questions (</span><a href="#reference-11">Arvaniti
+et al. 2006a</a>; Baltazani
+&amp;
+Jun 1999; Baltazani
+2007b)<span>, and in the
+"suspicious" calling contour (that is, when
+the vocative is to be interpreted as "is that you?")</span></li>
+</ul>
+<ul type="disc">
+<li class="MsoNormal">L*+H
+<span>is the default accent in
+pre-nuclear
+position; it may also occur in nuclear position in calls, imperatives,
+negative declaratives (</span>Baltazani
+2006c<span>), and wh-questions.
+Typically, the</span> L
+tone is
+aligned at or slightly before the onset of the accented syllable, and
+the H
+tone is aligned at the beginning of the first post-accentual vowel
+(Arvaniti
+&amp; Ladd, 1995;<a href="#reference-8"><span> </span>Arvaniti
+et
+al. 1998</a><span>). The realization
+of L*+H
+is different in contexts showing </span>tonal crowding
+(<a href="#reference-9">Arvaniti et al. 2000</a>).</li>
+</ul>
+<ul type="disc">
+<li class="MsoNormal">L+H*
+<span>often signals narrow focus in
+declaratives
+and other types of utterance (</span><a href="#reference-12">Arvaniti et
+al. 2006b</a><span>; Baltazani &amp;
+Jun 1999). The</span> realization
+difference between L+H* and L*+H <span>lies 
+in
+the alignment of the H tone: the H tone of L+H* is well within the
+accented
+vowel, whereas the H tone of the L*+H aligns early in the first
+post-accentual
+vowel.</span></li>
+</ul>
+<ul type="disc">
+<li class="MsoNormal">H*+L
+<span>also contrasts with H* in
+nuclear position.
+The H* is manifested as a small rise on the accented syllable, while
+the H*+L is manifested as a fall throughout
+this
+syllable (see the last accent in </span><a href="#figure-9">Figure 9</a>). <span>In
+terms of meaning, the use of H*+L conveys a sense of "stating the
+obvious" that is, the implication that the addressee should
+have
+known or expected the answer.</span></li>
+</ul>
+<ul type="disc">
+<li class="MsoNormal"><span>Downstep: All
+accents can be downstepped, i.e. scaled lowered than typically
+expected; examples of downstepped accents can be found in Figures</span>
+<a href="#figure-2">2</a>, <a href="#figure-5">5</a>, <a href="#figure-8">8</a>, <span>and </span><a href="#figure-9">9</a>. A<span>t
+this
+stage, it is not clear whether there is any particular meaning
+associated with
+downstep, or with particular downstepped accents.</span><br/>
+</li>
+</ul>
+<h2 class="title" id="the-phrase-accents">The phrase accents</h2>
+<br/>
+<p class="MsoNormal">In
+GRToBI, three phrase accents, H-, L- and !H-, are assumed to
+exist in Greek. As mentioned earlier, our analysis suggests that Greek
+has two
+levels of phrasing, the
+intermediate and intonational phrase (ip and IP
+respectively), and it is assumed here that phrase accents demarcate the
+right
+boundary of intermediate phrases. </p>
+<p class="MsoNormal">This
+analysis is based on the following observations. Tones
+associated with ips typically show simple F0 movements, unlike those
+associated
+with IPs which can show complex pitch
+configurations. Further there is a difference
+in scaling between ips and IPs, in cases where both have similar
+pitch
+movements, with ip boundaries exhibiting less extreme F0
+values than IP boundaries (i.e. a H- is scaled lower than a
+H-H% configuration). In addition, the pauses after IPs (even non-final
+ones)
+are longer and more frequent than
+those for ips. Recent research also suggests that left ip
+and IP boundaries are associated with prosodic strengthening
+manifested as lengthening of ip and IP initial consonants
+(Kastrinaki
+2003). Non-final intermediate phrases typically have a H- or L-
+phrase
+accent at their right edge.  !H-, on the other hand, is used only
+in
+certain types of
+stylized intonation and then only in utterance-final ips
+(i.e. it is always followed by a boundary tone).<br/>
+<br/>
+More recently, <a href="#reference-11">Arvaniti et al. (2006a)</a>
+have
+shown that the melody of Greek polar questions is difficult to
+accommodate with
+this inventory of phrase accents, and suggest that
+the phrase accent of these questions is a bitonal L+H-. In addition,
+this phrase accent does not always co-occur with the right edge of the
+intermediate phrase it is associated
+with; rather, when the nucleus of the polar question
+is on a non-final word, the L+H- phrase accent aligns with the last
+stressed
+syllable of the question. The two
+patterns of alignment of the L+H- used in Greek polar
+questions are illustrated in <a href="#figure-4">Figure 4</a>. <br/>
+</p>
+<h2 class="title" id="the-boundary-tones">The boundary tones</h2>
+<br/>
+<p class="MsoNormal">GRToBI
+includes three types of boundary tone, H%, L%, and !H%.
+These boundary tones demarcate the right edges of intonational phrases.
+They
+combine with most phrase accents
+into configurations which are frequently interpreted in
+the ways shown below (though the list is only indicative; the
+interpretation of
+a contour  depends also on the
+utterance and the context in which it is used).  <br/>
+</p>
+<h4 id="possible-combinations-of-phrase-accent-and-boundary-tone-and-their-usages">Possible combinations of phrase accent and boundary tone and their usages</h4>
+<table border="1" cellpadding="0" class="MsoNormalTable">
+<tbody>
+<tr>
+<td>
+<p class="MsoNormal">-L%</p>
+</td>
+<td>
+<div> </div>
+<p class="MsoNormal">declaratives,
+negative declaratives, imperatives, wh-questions </p>
+</td>
+</tr>
+<tr>
+<td>
+<p class="MsoNormal">L-H%</p>
+</td>
+<td>
+<p class="MsoNormal">"involved"
+continuation rise, "suspicious" calls</p>
+</td>
+</tr>
+<tr>
+<td>
+<p class="MsoNormal">H-L%</p>
+</td>
+<td>
+<p class="MsoNormal">yes-no
+questions, requesting calling contour (note: according to <a href="#reference-11">Arvaniti
+et al. 2006a</a> this combination
+is L+H-L%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p class="MsoNormal">H-H% </p>
+</td>
+<td>
+<p class="MsoNormal">continuation
+rise, questioning calling contour</p>
+</td>
+</tr>
+<tr>
+<td>
+<p class="MsoNormal">L-!H% </p>
+</td>
+<td>
+<p class="MsoNormal">"involved"
+wh-questions, negative declaratives (showing reservation), 
+requesting imperatives</p>
+</td>
+</tr>
+<tr>
+<td>
+<p class="MsoNormal">H-!H% </p>
+</td>
+<td>
+<p class="MsoNormal">stylized
+continuation rise</p>
+</td>
+</tr>
+<tr>
+<td>
+<p class="MsoNormal">!H-!H%</p>
+</td>
+<td>
+<p class="MsoNormal">stylized
+call, incredulous questions</p>
+</td>
+</tr>
+<tr>
+<td>
+<p class="MsoNormal">!H-H%</p>
+</td>
+<td>
+<p class="MsoNormal">polite
+stylized call</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+<h2 class="title" id="the-prosodic-words-tier">The prosodic words tier</h2>
+<br/>
+<p class="MsoNormal">The
+Prosodic Words (PrWords) Tier is a phonetic
+transcription using ASCII characters (see Appendix Ifor
+coventions). This tier
+facilitates the analysis of sandhi (connected
+speech phenomena, such as segment assimilations and
+deletions across word boundaries), and fast speech rules, by encoding
+their
+outcome. Like all transcriptions,
+this tier has its limitations, and is not meant
+to be a substitute for acoustic analysis; rather, it allows annotators
+to flag
+instances of sandhi for more
+detailed acoustic analysis. The PrWords Tier provides
+information about stress, since this information cannot be deduced from
+the
+transliteration in the Words
+Tier or derived from a dictionary (e.g., as mentioned,
+content Greek monosyllables, as well as some function words, are
+normally
+stressed and pitch accented in
+speech, but not in orthography; in contrast, disyllabic
+function words are orthographically accented, but most do not normally
+carry
+stress in speech). In this tier, each
+prosodic word (defined as a sequence of items showing total
+cohesion) is transcribed as one label. <br/>
+</p>
+<h2 class="title" id="the-words-tier">The words tier</h2>
+<p>This
+tier is a transliterated version of the text, equivalent to
+the Orthographic Tier in the American English ToBI  (see Appendix II
+for
+conventions). In Praat transliterations can be replaced by Greek
+orthography.</p>
+<h2 class="title" id="the-break-index-tier-and-its-diacritics">The break index tier (and its diacritics)</h2>
+<br/>
+<p class="MsoNormal">There
+are four break indices, 0, 1, 2, and 3. Break indices mark
+cohesion (or the lack thereof) between constituents in an utterance. </p>
+<ul type="disc">
+<li class="MsoNormal">BI 0 is used to
+mark total cohesion between orthographic words (e.g., clitics and their
+hosts). Orthographic words separated by BI 0 constitute a PrWord that
+may bear
+only one pitch accent (with the noted exception of hosts and clitics
+with two
+accents). Several types of sandhi may occur across a BI 0 boundary,
+however,
+sandhi
+is not necessary for a BI 0 to be used. For example, a proclitic
+particle like /na/ and the following verb are perceived as one PrWord
+by native speakers,
+but
+no sandhi can occur between /na/ and a consonant-initial verb.</li>
+</ul>
+<ul type="disc">
+<li class="MsoNormal"><span>BI 1 marks
+boundaries between PrWords. Items separated by BI 1 should carry at
+most one pitch accent each, although a PrWord need not be accented
+(e.g., all
+PrWords
+following an early focus are </span>de-accented<span>;
+Baltazani
+&amp; Jun, 1999; Botinis, 1998). In general, if an item is accented,
+then it
+should be considered a
+separate
+PrWord. On
+the other
+hand, the absence of accent, as mentioned, does not constitute evidence
+that an
+item is not an independent PrWord.</span></li>
+</ul>
+<ul type="disc">
+<li class="MsoNormal"><span>BI 2 marks the
+boundaries of ips (</span><a href="#the-phrase-accents">intermediate phrases</a><span>). </span></li>
+<li class="MsoNormal"><span>BI 3 marks the
+boundaries of IPs (</span><a href="#the-boundary-tones">Intonational Phrases</a><span>).</span></li>
+</ul>
+<br/>
+<h2 class="title" id="the-break-index-tier-diacritics">The break index tier diacritics</h2>
+<br/>
+<p class="MsoNormal">Four
+diacritics are used to provide more details on the prosodic
+structure of utterances. </p>
+<ul type="disc">
+<li class="MsoNormal"><big><span>s</span></big><span> is used with
+all break indices when there is evidence of sandhi (Figures</span> <a href="#figure-2">2</a>,
+    <a href="#figure-6">6</a>, <a href="#figure-7">7</a>, <a href="#figure-9">9</a>, <a href="#figure-10">10</a><span>). At present there is no coherent
+description
+of the sandhi rules for Greek
+(see
+Nespor &amp; Vogel, 1986; Kaisse, 1985; for a different point of view,
+see
+Arvaniti, 1991, and results in</span> Baltazani
+2006b<span>;
+for a review of the relevant literature,
+see</span> <a href="#bibliography">Arvaniti in press</a><span>). Our corpus
+confirmed
+previous studies that used naturally occurring data (e.g. Fallon, 1994)
+in
+showing that sandhi can apply across
+larger
+constituents than postulated by, e.g., Nespor &amp; Vogel (1986); see </span><a href="#figure-7">Figures
+7</a> <span>and </span><a href="#figure-9">9</a> <span>for
+sandhi across
+PrWords, </span><a href="#figure-6">Figure 6</a> <span>for
+sandhi across an ip boundary.
+Further
+annotation of the GRToBI corpus has also shown that some of the sandhi
+rules of Greek are better described as gestural overlap (Pelekanou,
+2000;</span> <a href="#reference-13">Arvaniti &amp;
+Pelekanou 2002</a>; Baltazani
+2006b<span>). Since
+the presence of sandhi does not necessarily signal
+cohesion, we have decided to use the diacritic
+s
+for sandhi at all prosodic levels, and thus provide an easy way of
+searching
+the database for such instances. We believe that the sandhi phenomena
+will
+be
+better understood if a large corpus of natural spoken data is
+investigated.</span></li>
+</ul>
+<ul type="disc">
+<li class="MsoNormal"><big>m </big>is
+used for
+mismatch between the break index and the prosodic or tonal cues to this
+index. This diacritic should be used with BI 0 to mark cases in
+which the
+context for sandhi exists but nevertheless sandhi does not take place.
+For
+example if a sequence like /ton 'pono/ ?the pain. Acc.? is pronounced
+[ton
+'pono] it should be marked as 0m, since in general it should be
+pronounced
+[to'mbono] or [to'bono]. The m diacritic should be used
+with
+BIs 1, 2, and 3 to mark the presence of a boundary without the tonal
+events
+that normally accompany it.</li>
+</ul>
+<ul type="disc">
+<li class="MsoNormal"><big>p </big>should
+be used to mark pause at a given boundary. </li>
+<li class="MsoNormal"><big>?</big> should
+be
+used
+to mark uncertainty about the strength of a boundary (the highest of
+the two candidates should be marked).</li>
+</ul>
+<br/>
+<h2 class="title" id="the-miscellaneous-tiers">The miscellaneous tiers</h2>
+<p>This
+tier allows researchers to annotate non-structural
+information that may be useful in interpreting the file, such as
+coughing,
+disfluency, pitch halving or rate of speech. </p>
+<h2 class="title" id="acknowledgments">Acknowledgments</h2>
+<p><span>The development of GRToBI
+largely took place while the first author was
+a
+visitor at the </span>Ohio
+State
+University
+Linguistics Laboratory<span>. We
+would like to thank the
+members of the Laboratory,
+particularly Mary Beckman, Julie McGory, Shu-hui Peng, Amanda Miller
+and
+Mariapaola D'Imperio for their encouragement and input
+during the development of
+GRToBI, and also for long distance technical support. Thanks are also
+due to
+Georgios Tserdanelis for providing wav files for this site,
+and to the students in Prof.
+Beckman's and Dr McGory's ToBI course for useful feedback at a
+first presentation of GRToBI. We are grateful to Sun-Ah Jun who
+brought us together, suggested
+we develop the system and played devil's advocate at the early stages
+of its
+gestation. Finally, we would like to express our thanks
+to Jenny and Peter Ladefoged
+for their kind hospitality to the first author during her stay at Los
+Angeles.<br/>
+</span></p>
+<h2 class="title" id="bibliography">Bibliography</h2>
+<br/>
+<ul>
+<li id="reference-1">Arvaniti, A. (1991) The phonetics of Modern Greek rhythm and its
+phonological implications. Ph.D. dissertation, Cambridge University. </li>
+<li id="reference-2">Arvaniti, A. (1992) Secondary stress: evidence from Modern Greek.
+In G. J. Docherty &amp; D. R. Ladd [eds], Papers in Laboratory
+Phonology II: Gesture, Segment, Prosody, 398-423. Cambridge University
+Press. </li>
+<li id="reference-3">Arvaniti, A. (1994) Acoustic features of Greek rhythmic
+structure. Journal of Phonetics 22: 239-268. </li>
+<li id="reference-4">Arvaniti, A. (1997) Greek ?emphatic stress?: a first approach.
+Greek Linguistics 95, vol. I: 13-22. Salzburg: The Department of
+Linguistics, University of Salzburg. </li>
+<li id="reference-5">Arvaniti, A. &amp; M. Baltazani (2005) Intonational analysis and
+prosodic annotation of Greek spoken corpora. In Sun-Ah Jun (ed.),
+Prosodic </li>
+<li id="reference-6">Typology: The Phonology of Intonation and Phrasing, pp. 84-117.
+Oxford: Oxford University Press. </li>
+<li id="reference-7">Arvaniti, A. &amp; D. R. Ladd (1995) Tonal alignment and the
+representation of accentual targets. Proceedings of the XIIIth
+International Congress of Phonetic Sciences, 4: 220-23. Stockholm. </li>
+<li id="reference-8">Arvaniti, A.,
+D. R. Ladd &amp; I. Mennen (1998) Stability
+of tonal alignment: the case of Greek prenuclear accents. Journal
+of Phonetics 26, 3-25. </li>
+<li id="reference-9">Arvaniti, A.,
+D. R. Ladd &amp; I. Mennen (2000) What is a starred tone? Evidence
+from Greek. In J. Pierrehumbert &amp; M. Broe [eds], Papers in </li>
+<li id="reference-10">Laboratory Phonology V. Cambridge University Press. pp.119-131. </li>
+<li id="reference-11">Arvaniti,
+A., D. R. Ladd &amp; I. Mennen
+(2006a). Phonetic effects of focus and ?tonal
+crowding? in intonation: Evidence from Greek polar questions.
+Speech Communication 48: 667-696. </li>
+<li id="reference-12">Arvaniti, A., D. R. Ladd &amp; I.
+Mennen (2006b) Tonal association and
+tonal
+alignment: evidence from Greek polar questions and emphatic statements.
+Language and Speech 49: 421-450. </li>
+<li id="reference-13">Arvaniti, A. &amp; T. Pelekanou (2002) Postlexical rules and
+gestural overlap in a Greek spoken corpus. Recherches en linguistique
+grecque: Actes du 5e Colloque international de linguistique grecque,
+pp. 71-74. Paris : L?Harmattan.  </li>
+<li id="reference-14">Baltazani,
+M. (2002) Quantifier
+scope
+and
+the
+role of intonation in Greek.  Ph.D. dissertation, UCLA. </li>
+<li id="reference-15">Baltazani, M. (2003) Broad Focus across sentence types in
+Greek. Proceedings of Eurospeech-2003, Geneva, Switzerland. </li>
+<li id="reference-16">Baltazani, M. (2004) The prosodic structure of
+quantificational sentences in Greek. Proceedings of the 38th meeting of
+the Chicago Linguistic Society. </li>
+<li id="reference-17">Baltazani,
+M.  (2006a) On
+/s/-voicing in
+Greek.  Proceedings of the 7th International Conference
+on Greek Linguistics, York, UK. </li>
+<li id="reference-18">Baltazani,
+M.  (2006b) Focusing,
+prosodic phrasing and Hiatus resolution in Greek. In
+Laboratory Phonology 8, Luis Goldstein, Douglas Whalen, Catherine Best
+(eds.), Mouton de Gruyter, Berlin, 473-494. </li>
+<li id="reference-19">Baltazani,
+M.  (2006c) Intonation
+and
+pragmatic
+interpretation
+of negation in Greek. Journal of Pragmatics, 38, Issue 10, p.
+1658-1676, Elsevier. </li>
+<li id="reference-20">Baltazani,
+M. (2007a) Prosodic
+rhythm
+and
+the
+status of vowel reduction in Greek.  In Selected Papers on
+Theoretical and Applied Linguistics from the 17th International
+Symposium on Theoretical &amp; Applied Linguistics, Volume 1,
+Department of Theoretical and Applied Linguistics, Salonica, p. 31-43. </li>
+<li id="reference-21">Baltazani,
+M. (2007b) Intonation
+of
+polar
+questions
+and the location of nuclear stress in Greek.  In Tones and
+Tunes,Volume II, Experimental Studies in Word and Sentence Prosody,
+Carlos Gussenhoven &amp; Tomas Riad (eds.), Mouton de Gruyter, Berlin,
+p. 387-405. </li>
+<li id="reference-22">Baltazani, M. &amp; Jun S. (1999) Focus and topic intonation in
+Greek. Proceedings of the XIVth International Congress of Phonetic
+Sciences, 2: 1305-8. San Fransisco. </li>
+<li id="reference-23">Beckman, M. E,. J. Hirshberg, S. Shattuck-Hufnagel. 2005. The
+original ToBI system and the evolution of the ToBI framework. In Sun-Ah
+Jun (ed.), Prosodic Typology: The Phonology of Intonation and Phrasing,
+pp. 9-54. Oxford: Oxford University Press. </li>
+<li id="reference-24">Botinis, A. (1998) Intonation in Greek. In Hirst, D. &amp; A.
+DiCristo (eds) Intonation Systems, 288-310. Cambridge University Press.
+  </li>
+<li id="reference-25">Fallon, P. (1994) Naturally occurring hiatus in Modern Greek. In
+I. Philippaki-Warburton, K. Nicolaidis and M. Sifianou (eds), Themes in
+Greek Linguistics, 217-224. London: John Benjamins Publishing Co. </li>
+<li id="reference-26">Jusczyck, P.W. (1997) The Discovery of Spoken Language. The MIT
+Press. </li>
+<li id="reference-27">Kaisse, E. M. (1985) Connected Speech: The Interaction of Syntax
+and Phonology. Academic Press. </li>
+<li id="reference-28">Ladd, D. R. (1996) Intonational Phonology. Cambridge: Cambridge
+University Press. </li>
+<li id="reference-29">Nespor, N. &amp; I. Vogel (1986) Prosodic phonology. Dordrecht:
+Foris. </li>
+<li id="reference-30">Pierrehumbert, J. (1981) Synthesizing intonation. Journal of the
+Acoustical Society of America 70: 985-995. </li>
+<li id="reference-31">Pelekanou, T. (2000) Greek Sandhi Rules: Evidence from Naturally
+Occuring Data. MSc Thesis, University of Edinburgh. </li>
+<li id="reference-32">Silverman, K. et al. (1992). ToBI: A standard scheme for labeling
+prosody. Proceedings of the Second International Conference on </li>
+<li id="reference-33">Spoken Language Processing, 867-879. </li>
+<li id="reference-34"><a href="http://www.ling.ohio-state.edu/phonetics/J_ToBI/">Venditti,
+J.
+J.</a>
+(1995) Japanese ToBI labelling guidelines<span lang="IT">.</span></li>
+</ul>
+<br/>
+</div>
+</div>
+</section><section class="gallery" id="figures"><h2>Figures and sound examples</h2><p>Original figures and corresponding sound recordings, provided by the authors.</p><figure class="figure" id="figure-1"><h3 id="figure-1">Figure 1</h3><img alt="GRToBI Figure 1" loading="lazy" src="figures/Fig1.png"/><figcaption>Figure 1: This example (‘Do the flowers really smell?’ lit. ‘the flowers smell?’), uttered in a surprised manner, illustrates the different alignment of the L*+H (the accent on ['lludia]) and L+H* (the accent on [mi'rizune]). Note the difference in the alignment of the H tone in the two accents.</figcaption><audio controls="" preload="none" src="audio/Fig1.mp3">Your browser does not support audio playback.</audio><a download="" href="audio/Fig1.mp3">Download sound example 1</a></figure><figure class="figure" id="figure-2"><h3 id="figure-2">Figure 2</h3><img alt="GRToBI Figure 2" loading="lazy" src="figures/Fig2.png"/><figcaption>Figure 2: This example (‘S/he is talking to Charalampos’) shows a downstepped !H* nuclear accent. Note the lack of a dip at the beginning of this accent compared to the L+H* in Figure 1 .</figcaption><audio controls="" preload="none" src="audio/Fig2.mp3">Your browser does not support audio playback.</audio><a download="" href="audio/Fig2.mp3">Download sound example 2</a></figure><figure class="figure" id="figure-3"><h3 id="figure-3">Figure 3</h3><img alt="GRToBI Figure 3" loading="lazy" src="figures/Fig3.png"/><figcaption>Figure 3 : These two examples, (both glossed as ‘they smell’), illustrate the difference between H*+L (on the left) and H* (on the right) in a one word utterance.</figcaption><audio controls="" preload="none" src="audio/Fig3.mp3">Your browser does not support audio playback.</audio><a download="" href="audio/Fig3.mp3">Download sound example 3</a></figure><figure class="figure" id="figure-4"><h3 id="figure-4">Figure 4</h3><img alt="GRToBI Figure 4" loading="lazy" src="figures/Fig4.png"/><figcaption>Figure 4: This illustration shows two typical L* accents on segmentally identical questions, but with focus on the word [mi'rizune] ‘they smell’ on the left and on the word [lu'ludia] ‘flowers’ on the right. The questions mean ‘Do the flowers SMELL?’ and ‘Is it the FLOWERS that smell?’ respectively. Note also the different alignment of the H-, which is on (unstressed) [zu] in the question on the left, but the stressed syllable [ri] in the question on the right.</figcaption><audio controls="" preload="none" src="audio/Fig4.mp3">Your browser does not support audio playback.</audio><a download="" href="audio/Fig4.mp3">Download sound example 4</a></figure><figure class="figure" id="figure-5"><h3 id="figure-5">Figure 5</h3><img alt="GRToBI Figure 5" loading="lazy" src="figures/Fig5.png"/><figcaption>Figure 5 : This example (gloss: ‘Dalida was scolding the baby [when she fainted]!’) exemplifies the L-H% phrasal configuration, which is preceded in this case by a L+!H* accent on [mo'ro]. Note also the undershot (wL*+H) and early aligned (&gt;L*+H) realizations of the two L*+H accents on ['malone] and [iDali'Da] respectively.</figcaption><audio controls="" preload="none" src="audio/Fig5.mp3">Your browser does not support audio playback.</audio><a download="" href="audio/Fig5.mp3">Download sound example 5</a></figure><figure class="figure" id="figure-6"><h3 id="figure-6">Figure 6</h3><img alt="GRToBI Figure 6" loading="lazy" src="figures/Fig6.png"/><figcaption>Figure 6 : This example, (‘The north wind and the sun agreed…’), illustrates the difference in scaling between H- and H-H%. Further the example shows the diphthongal realization of /o 'iLos/, which together with the conjuction /ke/ ‘and’ form one PrWord with a rising diphthong [oI], ['coILos]; note the alignment of the L* which aligns with the whole syllable [coI]. Finally, the canonical alignment of the L*s of ['coILos] and [si'mfonisan], which are manifested as low plateaus, can be contrasted with the wL* of [mo'ro] in Figure 9 .</figcaption><audio controls="" preload="none" src="audio/Fig6.mp3">Your browser does not support audio playback.</audio><a download="" href="audio/Fig6.mp3">Download sound example 6</a></figure><figure class="figure" id="figure-7"><h3 id="figure-7">Figure 7</h3><img alt="GRToBI Figure 7" loading="lazy" src="figures/Fig7.png"/><figcaption>Figure 7 : This example ([ta.meseona] ‘We do not live in the Middle Ages’) illustrates the typical pattern of a negative declarative expressing reservation. Note that the negative particle /Den/, which is considered a phonological clitic, carries the nuclear (and only) pitch accent of the utterance, and thus forms a separate pword from the de-accented verb ['zume] ‘we live’; yet, sandhi (/n/-deletion before the fricative [z]) does take place as well. The rest of the utterance is deaccented, with the L- spreading until after the last stressed syllable ([se] of [me'seona] ‘Middle Ages’). Finally, compare the scaling of the !H% (relative to that of the L+H* peak) to the scaling of the H- and H% tones in Figures 5 , 6 and 9 relatively to the accentual Hs in those examples.</figcaption><audio controls="" preload="none" src="audio/Fig7.wav">Your browser does not support audio playback.</audio><a download="" href="audio/Fig7.wav">Download sound example 7 (WAV)</a></figure><figure class="figure" id="figure-8"><h3 id="figure-8">Figure 8</h3><img alt="GRToBI Figure 8" loading="lazy" src="figures/Fig8.png"/><figcaption>Figure 8 : This example (gloss: ‘our focus is…’) illustrates the stylized H-!H% configuration on the word ['ine] ‘is’. Note also the presence of two accents on the word [epi'cedrosi] ‘focus’, which here is followed by the enclitic [mas] ‘ours’, and thus carries enclitic stress on its last syllable [si].</figcaption><audio controls="" preload="none" src="audio/Fig8.mp3">Your browser does not support audio playback.</audio><a download="" href="audio/Fig8.mp3">Download sound example 8</a></figure><figure class="figure" id="figure-9"><h3 id="figure-9">Figure 9</h3><img alt="GRToBI Figure 9" loading="lazy" src="figures/Fig9.png"/><figcaption>Figure 9 : This example, (gloss: ‘Dalida was scolding the baby when the phone rang’), shows two different realizations of L*+H under tonal crowding, &gt;L*+H which is realized earlier than it canonically would (the H tone is aligned with the accented vowel, instead of the first postaccentual vowel), and wL*+H, in which the L* tone is undershot, while the H shows the typical late alignment of H in L*+H accents. In this utterance there is also an undershot L* (wL*) on [mo'ro], realized as a rise from low pitch throughout the accented syllable (cf. the canonical L*s in Figure 6 ) .</figcaption><audio controls="" preload="none" src="audio/Fig9.mp3">Your browser does not support audio playback.</audio><a download="" href="audio/Fig9.mp3">Download sound example 9</a></figure><figure class="figure" id="figure-10"><h3 id="figure-10">Figure 10</h3><img alt="GRToBI Figure 10" loading="lazy" src="figures/Fig10.png"/><figcaption>Figure 10 : This example, (gloss: ‘[You] BECOME-PART of society through dance’) illustrates de-accenting after early focus. Note also, the several instances of sandhi and fast speech rules.</figcaption><audio controls="" preload="none" src="audio/Fig10.mp3">Your browser does not support audio playback.</audio><a download="" href="audio/Fig10.mp3">Download sound example 10</a></figure></section></main><footer>GRToBI historical manual (last updated June 2011). Website reconstructed for independent browsing. Historical publication references are retained as text where original UCSD-hosted PDF links were unavailable.</footer></body></html>
